@@ -8,7 +8,7 @@ body{
     margin: 0;
 }
 .hero{
-    background-image: url(/cypher.png);
+    background-image: url(cypher.png);
     background-size: cover;
     width: 100vw;
     height: 100vh;
