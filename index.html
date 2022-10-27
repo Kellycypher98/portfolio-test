@@ -249,8 +249,8 @@
                     <label for="" style="display:block; 
                                         margin-bottom: 0.5em;">Enter your name</label>
                     <div style="display: flex; gap: 1em;">
-                        <input type="text" placeholder="First name" style="width:90%; padding: 1em; ">
-                        <input type="text" placeholder="Last name" style="width:90%; padding: 1em;">
+                        <input type="text" name="firstName" placeholder="First name" style="width:90%; padding: 1em; ">
+                        <input type="text" name="lastName" placeholder="Last name" style="width:90%; padding: 1em;">
                     </div>
                    
                 </div>
@@ -259,20 +259,20 @@
                     <label for="" style="display:block;
                                         margin-bottom: 0.5em;"> Enter contact details</label>
                     <div style="display: flex; gap: 1em;" >
-                        <input type="email" name="" id="" placeholder="Email" style="width:90%; padding: 1em;">
-                        <input type="tel" name="" id="" placeholder="phone number" style="width:90%; padding: 1em;">
+                        <input type="email" name="emailSender" id=""  placeholder="Email" style="width:90%; padding: 1em;">
+                        <input type="tel" name="telephoneSender" id=""  placeholder="phone number" style="width:90%; padding: 1em;">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="" style="display:block;
                                         margin-bottom: 0.5em; margin-top: 1em;">Please select the type of service you want</label>
-                    <select name="" id=""  style="padding:1em;">
-                        <option value="">select service</option>
-                        <option value="">Website Development & redesign</option>
-                        <option value="">App development</option>
-                        <option value="">UI/UX design</option>
-                        <option value="">Consulting</option>
+                    <select name="service_type" id=""  style="padding:1em;">
+                        <option value="default">select service</option>
+                        <option value="web_development">Website Development & redesign</option>
+                        <option value="appdev">App development</option>
+                        <option value="UI">UI/UX design</option>
+                        <option value="consult">Consulting</option>
                     </select>
 
                 </div>
@@ -296,8 +296,8 @@
                 <div class="form-group" style="display:flex; flex-direction: column;">
                     <label for="description" style="margin-top:1em;">Describe the nature of the project</label>
                     <div style="display:flex; gap:1em; margin-top: 0.5em;">
-                        <textarea name="" id="" cols="30" rows="10" style="resize:none; padding: 1em; width: 50%;height: 4em; border-radius: 10px;"></textarea>
-                        <input type="file" name="" id="">
+                        <textarea name="nature" id="" cols="30" rows="10" style="resize:none; padding: 1em; width: 50%;height: 4em; border-radius: 10px;"></textarea>
+                        <input type="file" name="description" id="">
 
                     </div>
                   
@@ -305,7 +305,7 @@
 
                 <div class="form-group" style="margin-top:1em;">
                     <label for="budget">what is your budget for this service ?</label>
-                    <select name="" id="" style="margin-left:1em ; padding: 1em;">
+                    <select name="budget" id="" style="margin-left:1em ; padding: 1em;">
                         <option value="">select budget</option>
                         <option value="">less than $1000</option>
                         <option value="">between $1000 - $5000</option>
@@ -316,6 +316,14 @@
                 </div>
                 
                 <input type="button" value="submit" style="margin:auto; display: flex; justify-content: center; margin-top: 2em; padding: 1em 2em 1em 2em ; cursor: pointer;">
+                
+                <?php if(!empty($message)){?>
+                    <div class="success">
+                        <strong>
+                            <?php echo $message; ?>
+                        </strong>
+                    </div>
+                <?php } ?>
 
             </form>
             <br>
